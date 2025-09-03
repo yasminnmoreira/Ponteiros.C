@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int idade;
+    int *ptr_idade;
+    
+    printf("Digite a idade do aluno: ");
+    scanf("%d", &idade);
+    
+    ptr_idade = &idade;
+    
+    printf("\n=== REGISTRO DA IDADE ===\n");
+    printf("Idade digitada: %d anos\n", *ptr_idade);
+    printf("Endereco de memoria: %p\n", ptr_idade);
+    
+    return 0;
+}
