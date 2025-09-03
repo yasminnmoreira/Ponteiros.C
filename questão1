@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int cofrinho = 150; 
+    int *ptr_cofrinho;
+    ptr_cofrinho = &cofrinho;
+    
+    printf("=== COFRINHO DO JOAO ===\n");
+    printf("Valor guardado: R$ %d\n", *ptr_cofrinho);
+    printf("Endereco de memoria: %p\n", ptr_cofrinho);
+    
+    return 0;
+}
