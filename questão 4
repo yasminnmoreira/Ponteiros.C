@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    float total_horas = 0;
+    
+    printf("Digite o numero de funcionarios: ");
+    scanf("%d", &n);
+    
+    float *horas = (float*)malloc(n * sizeof(float));
+    
+    if(horas == NULL) {
+        printf("Erro na alocacao de memoria!\n");
+        return 1;
+    }
+    
+    printf("\n=== REGISTRO DE HORAS ===\n");
+    
+    float *ptr = horas;
+    for(int i = 0; i < n; i++) {
+        printf("Digite as horas trabalhadas do funcionario %d: ", i + 1);
+        scanf("%f", ptr);
+        total_horas += *ptr; 
+        ptr++; 
+    }
+    
+    printf("\n=== TOTAL DE HORAS ===\n");
+    printf("Total de horas trabalhadas no mes: %.2f horas\n", total_horas);
+    
+    free(horas);
+    
+    return 0;
+}
