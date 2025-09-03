@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    float precos[5];
+    float *ptr = precos;
+    
+    printf("=== CADASTRO DE PRECOS ===\n");
+    
+    for(int i = 0; i < 5; i++) {
+        printf("Digite o preco do produto %d: R$ ", i + 1);
+        scanf("%f", ptr + i);
+    }
+    
+    printf("\n=== PRECOS E DESCONTOS ===\n");
+    
+    for(int i = 0; i < 5; i++) {
+        printf("Produto %d:\n", i + 1);
+        printf("  Preco original: R$ %.2f\n", *(ptr + i));
+        printf("  Preco com 10%% de desconto: R$ %.2f\n", *(ptr + i) * 0.9);
+        printf("  -------------------------\n");
+    }
+    
+    return 0;
+}
