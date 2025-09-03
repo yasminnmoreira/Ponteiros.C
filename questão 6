@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    float notas[3][3];
+    
+    printf("=== REGISTRO DE NOTAS ===\n");
+
+    float *ptr = &notas[0][0];
+    
+    for(int i = 0; i < 3; i++) {
+        printf("\n=== ALUNO %d ===\n", i + 1);
+        for(int j = 0; j < 3; j++) {
+            printf("Digite a nota da prova %d: ", j + 1);
+            scanf("%f", ptr + (i * 3) + j);
+        }
+    }
+    
+    printf("\n=== TODAS AS NOTAS ===\n");
+    
+    ptr = &notas[0][0];
+    for(int i = 0; i < 3; i++) {
+        printf("\nAluno %d: ", i + 1);
+        for(int j = 0; j < 3; j++) {
+            printf("%.2f ", *(ptr + (i * 3) + j));
+        }
+    }
+    
+    printf("\n\n=== DIAGONAL PRINCIPAL ===\n");
+    
+    float soma_diagonal = 0;
+    printf("Notas da diagonal: ");
+    
+    for(int i = 0; i < 3; i++) {
+        
+        float *elemento_diagonal = &notas[i][i];
+        printf("%.2f ", *elemento_diagonal);
+        soma_diagonal += *elemento_diagonal;
+    }
+    
+    printf("\nSoma da diagonal principal: %.2f\n", soma_diagonal);
+    
+    return 0;
+}
